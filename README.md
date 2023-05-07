@@ -1,8 +1,9 @@
 # forgeandcraft-site
-The Forge &amp; Craft website
+The [Forge &amp; Craft](https://forgeandcraft.co.uk) website.
 
-![FCLogo](https://profiles.cache.lol/forgeandcraft/picture?v=1681759104)
+![FCLogo](https://metapixl.com/storage/avatars/054/671/252/002/144/040/8/tmt1cRqh02wITSu3RHGU_avatar.png?v=3)
 
-Currently a single page on omg.lol, initially styled as a profile page, now static HTML.
+Currently a single page on omg.lol, initially styled as a profile page, now static HTML. The image gallery is [via PixelFed running on MetaPixl](https://metapixl.com/@forgeandcraft).
 
-That is all.
+That is all. Move along.
+
