@@ -5,5 +5,7 @@ The [Forge &amp; Craft](https://forgeandcraft.co.uk) website.
 
 Currently a single page on omg.lol, initially styled as a profile page, now static HTML. The image gallery is [via PixelFed running on MetaPixl](https://metapixl.com/@forgeandcraft).
 
+Requires [clilol](https://mcornick.com/clilol/) for the deploy/update script.
+
 That is all. Move along.
 
