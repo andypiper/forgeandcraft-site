@@ -143,65 +143,161 @@
         text-align: left;
       }
 
-* {box-sizing: border-box;}
+      * {
+        box-sizing: border-box;
+      }
 
-.main{display: flex; flex-flow: row wrap;  width: 80%; margin: 0 auto}
+      .main {
+        display: flex;
+        flex-flow: row wrap;
+        width: 80%;
+        margin: 0 auto
+      }
 
-.dp10,.dp12,.dp17,.dp20,.dp25,.dp33,.dp40,.dp50,.dp60,.dp67,.dp75,.dp80,.dp83,.dp100,.fluid{margin:0 0 0 var(--m)}
+      .dp10,
+      .dp12,
+      .dp17,
+      .dp20,
+      .dp25,
+      .dp33,
+      .dp40,
+      .dp50,
+      .dp60,
+      .dp67,
+      .dp75,
+      .dp80,
+      .dp83,
+      .dp100,
+      .fluid {
+        margin: 0 0 0 var(--m)
+      }
 
-.dp10{width:calc(10% - var(--m))}
-.dp12{width:calc(12.5% - var(--m))}
-.dp17{width:calc(16.6667% - var(--m))}
-.dp20{width:calc(20% - var(--m))}
-.dp25{width:calc(25% - var(--m))}
-.dp33{width:calc(33.3334% - var(--m))}
-.dp40{width:calc(40% - var(--m))}
-.dp50{width:calc(50% - var(--m))}
-.dp60{width:calc(60% - var(--m))}
-.dp67{width:calc(66.6667% - var(--m))}
-.dp75{width:calc(75% - var(--m))}
-.dp80{width:calc(80% - var(--m))}
-.dp83{width:calc(83.3334% - var(--m))}
-.dp100{width:calc(100% - var(--m))}
+      .dp10 {
+        width: calc(10% - var(--m))
+      }
 
-.fluid{flex:2}
-.clear{width: 100%}
-.nomargin{display: flex; flex-flow: row wrap; padding:0 !important; margin:0 !important}
+      .dp12 {
+        width: calc(12.5% - var(--m))
+      }
 
-@media (max-width: 600px) {
-  .dp10,.dp12,.dp17,.dp20,.dp25,.dp33,.dp40,.dp50,.dp60,.dp67,.dp75,.dp80,.dp83,.dp100,.fluid {width:100%; margin:0}}
+      .dp17 {
+        width: calc(16.6667% - var(--m))
+      }
 
-.button {
-    font-size: 1em;
-    font-weight: bold;
-    border: 0;
-    margin: 10px;
-    padding: 0.7em;
-    cursor: pointer;
-    text-align: center;
-    transition-duration: 0.1s;
-    transition-timing-function: linear;
-}
+      .dp20 {
+        width: calc(20% - var(--m))
+      }
 
-.button:hover,
-.button:focus {
-    opacity: 0.8;
-}
+      .dp25 {
+        width: calc(25% - var(--m))
+      }
 
-.btcolor {
-    background-color: #4aa2da;
-    color: #fff;
-}
+      .dp33 {
+        width: calc(33.3334% - var(--m))
+      }
 
-.round {
-    border-radius: 0.6em;
-}
-.pill {
-    border-radius: 1.1em / 50%;
-}
-.border {
-    border: 1px solid #1577ca;
-}
+      .dp40 {
+        width: calc(40% - var(--m))
+      }
+
+      .dp50 {
+        width: calc(50% - var(--m))
+      }
+
+      .dp60 {
+        width: calc(60% - var(--m))
+      }
+
+      .dp67 {
+        width: calc(66.6667% - var(--m))
+      }
+
+      .dp75 {
+        width: calc(75% - var(--m))
+      }
+
+      .dp80 {
+        width: calc(80% - var(--m))
+      }
+
+      .dp83 {
+        width: calc(83.3334% - var(--m))
+      }
+
+      .dp100 {
+        width: calc(100% - var(--m))
+      }
+
+      .fluid {
+        flex: 2
+      }
+
+      .clear {
+        width: 100%
+      }
+
+      .nomargin {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0 !important;
+        margin: 0 !important
+      }
+
+      @media (max-width: 600px) {
+
+        .dp10,
+        .dp12,
+        .dp17,
+        .dp20,
+        .dp25,
+        .dp33,
+        .dp40,
+        .dp50,
+        .dp60,
+        .dp67,
+        .dp75,
+        .dp80,
+        .dp83,
+        .dp100,
+        .fluid {
+          width: 100%;
+          margin: 0
+        }
+      }
+
+      .button {
+        font-size: 1em;
+        font-weight: bold;
+        border: 0;
+        margin: 10px;
+        padding: 0.7em;
+        cursor: pointer;
+        text-align: center;
+        transition-duration: 0.1s;
+        transition-timing-function: linear;
+      }
+
+      .button:hover,
+      .button:focus {
+        opacity: 0.8;
+      }
+
+      .btcolor {
+        background-color: #4aa2da;
+        color: #fff;
+      }
+
+      .round {
+        border-radius: 0.6em;
+      }
+
+      .pill {
+        border-radius: 1.1em / 50%;
+      }
+
+      .border {
+        border: 1px solid #1577ca;
+      }
     </style>
     <link rel="me" href="https://macaw.social/@andypiper">
     <script async src="https://metapixl.com/embed.js" crossorigin></script>
@@ -226,31 +322,43 @@
       <div id="bio">
         <p>pen plotter art, 3D printing,<br>vinyl cutting, electronics, craft</p>
       </div>
-<div style="padding: 1.5em 0em 2em 0em; display:block;">
-<a class="button btcolor round" href="https://shop.forgeandcraft.co.uk" target="_blank" style="text-decoration: none; color: #EEE;">🎨 Check out our products</a>
-</div>
-<p>A Forge & Craft Original is created by <em>humans</em> collaborating with <em>algorithms</em> and <em>robots</em>; each physical pen plot is unique through the stroke of the pen, the layering of the ink, and the texture of the paper or materials chosen. 
-<br><br>
-A tangible, unique piece of art, made by us, using software and technology as part of our craft.
-</p>
-<div>
-<hr>
+      <div style="padding: 1.5em 0em 2em 0em; display:block;">
+        <a class="button btcolor round" href="https://shop.forgeandcraft.co.uk" target="_blank"
+          style="text-decoration: none; color: #EEE;">🎨 Check out our products</a>
+      </div>
+      <p>A Forge & Craft Original is created by <em>humans</em> collaborating with <em>algorithms</em> and
+        <em>robots</em>; each physical pen plot is unique through the stroke of the pen, the layering of the ink, and
+        the texture of the paper or materials chosen.
+        <br><br>
+        A tangible, unique piece of art, made by us, using software and technology as part of our craft.
+      </p>
+      <div>
+        <hr>
         <p>
-          <a href="https://emfcamp.org/"><img src="https://www.emfcamp.org/static/images/brand/2024/emf2024-logo-text-light.svg"
-              style="width: 100%; height: auto;"
-              alt="The Electromagnetic Field 2024 logo"></a>
+          <a href="https://emfcamp.org/"><img
+              src="https://www.emfcamp.org/static/images/brand/2024/emf2024-logo-text-light.svg"
+              style="width: 100%; height: auto;" alt="The Electromagnetic Field 2024 logo"></a>
         </p>
-<p>Come see us at <a href="https://emfcamp.org/">EMF 2024</a>!<br><br>We have a stall in the Night Market on Friday after 6pm.<br>Andy is <a href="https://www.emfcamp.org/schedule/2024/302-where-is-the-art-a-history-in-technology">speaking about plotter art</a> on Sunday at 11.10am.<br>Heidi can run bespoke vinyl cutting or sublimation customisation workshops for you.</p>
-<hr>
-<iframe title="Pixelfed Profile Embed" src="https://metapixl.com/forgeandcraft/embed"
-          class="pixelfed__embed" style="max-width: 100%; border: 0" width="400" height="400" allowfullscreen></iframe>
-<hr>
-</div>
+        <p>Come see us at <a href="https://emfcamp.org/">EMF 2024</a>!<br><br>
+          Heidi is running a <a href="https://www.emfcamp.org/schedule/2024/739-cutting-machines-vinyl-pressing">drop-in
+            vinyl cutting
+            and sublimation workshop</a> on Friday from 11am.
+          <br>We have a stall in the Night Market on
+          Friday after 6pm.<br>Andy is <a
+            href="https://www.emfcamp.org/schedule/2024/302-where-is-the-art-a-history-in-technology">speaking about
+            plotter art</a> on Sunday at 11.10am.
+        </p>
+        <hr>
+        <iframe title="Pixelfed Profile Embed" src="https://metapixl.com/forgeandcraft/embed" class="pixelfed__embed"
+          style="max-width: 100%; border: 0" width="400" height="400" allowfullscreen></iframe>
+        <hr>
+      </div>
 
-<div>
-If you met us at Wimbledon Art Fair, Thank You for visiting! Here is a link to Andy's <a href="https://forgeandcraft.url.lol/picoplot">Picoplot wall plotter</a>.
-<hr>
-</div>
+      <div>
+        If you met us at Wimbledon Art Fair, Thank You for visiting! Here is a link to Andy's <a
+          href="https://forgeandcraft.url.lol/picoplot">Picoplot wall plotter</a>.
+        <hr>
+      </div>
       <div id="profile-items">
         <h1>
           Heidi
@@ -353,7 +461,8 @@ If you met us at Wimbledon Art Fair, Thank You for visiting! Here is a link to A
               href="https://diode.zone/c/andypiper_tv/">Videos</a>
           </li>
           <li>
-            <span class="fa-li"><i class="fa-brands fa-dev"></i></span><a rel="me" href="https://dev.to/andypiper">Coding
+            <span class="fa-li"><i class="fa-brands fa-dev"></i></span><a rel="me"
+              href="https://dev.to/andypiper">Coding
               blog</a>
           </li>
           <li>
@@ -367,9 +476,12 @@ If you met us at Wimbledon Art Fair, Thank You for visiting! Here is a link to A
         <ul class="fa-ul">
           <li>
             <span class="fa-li"><i class="fa-solid fa-shopping-bag"></i></span><a rel="me"
-              href="https://forgeandcraft.url.lol/shop"> Shop</a></li>
+              href="https://forgeandcraft.url.lol/shop"> Shop</a>
+          </li>
           <li>
-            <span class="fa-li"><i class="fa-brands fa-linkedin-in"></i></span><a rel="me" href="https://www.linkedin.com/company/98936772"> LinkedIn</a></li>
+            <span class="fa-li"><i class="fa-brands fa-linkedin-in"></i></span><a rel="me"
+              href="https://www.linkedin.com/company/98936772"> LinkedIn</a>
+          </li>
           <li>
             <span class="fa-li"><i class="fa-solid fa-feather-pointed"></i></span>Studio 273,
             <span>  </span><a href="https://www.wimbledonartstudios.co.uk/">Wimbledon Art Studios</a>
@@ -381,8 +493,8 @@ If you met us at Wimbledon Art Fair, Thank You for visiting! Here is a link to A
           </li>
         </ul>
 
-         <hr>
-<!-- Wimbledon Art Fair block --
+        <hr>
+        <!-- Wimbledon Art Fair block --
         <p>
           <a href="https://wimbledonartfair.com/"><img src="https://cdn.some.pics/forgeandcraft/6516f81d8123b.png"
               style="width: 100%; height: auto;"
@@ -391,7 +503,7 @@ If you met us at Wimbledon Art Fair, Thank You for visiting! Here is a link to A
 <p>Come and see us (along with 150+ other talented artists and creators) during the FREE open studios event, May 9-12 2024. Find us in Red Studios 273.</p>
 -->
 
-<!--
+        <!--
       <div style="position: relative; padding-top: 56.25%;"><iframe title="Forge & Craft Studio Tour May 2023"
           width="100%" height="100%"
           src="https://diode.zone/videos/embed/bda2fd77-7eae-465a-8f06-a4d18e991f60?warningTitle=0&peertubeLink=0"
