@@ -41,7 +41,7 @@
     </script>
     <meta property="og:image" content="https://cdn.some.pics/forgeandcraft/643d9a448c521.jpg">
     <meta property="og:url" content="https://forgeandcraft.co.uk">
-    <meta property="og:title" content="Forge & Craft: Makers">
+    <meta property="og:title" content="Forge & Craft: Pen Plotter Art and Making">
     <meta property="og:site_name" content="Forge & Craft">
     <meta property="og:description"
       content="Pen plotter art, 3D printing, vinyl cutting, electronics, craft. Wimbledon, UK.">
@@ -50,17 +50,14 @@
       Forge & Craft
     </title>
     <link rel="me" href="https://glitch.com/@andypiper">
-
+    <link rel="me" href="https://macaw.social/@andypiper">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- iOS Home screen Optimizations -->
     <link rel="apple-touch-icon" href="https://cdn.some.pics/forgeandcraft/66830bc266cae.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Forge & Craft">
     <link rel="apple-touch-startup-image" href="https://cdn.some.pics/forgeandcraft/643d9a448c521.jpg">
-    <!-- Prevent automatic phone number detection -->
     <meta name="format-detection" content="telephone=no">
-
     <link href="https://cdn.cache.lol/profiles/themes/css/base.css" rel="stylesheet">
     <link href="https://cdn.cache.lol/profiles/themes/css/catppuccin-macchiato.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/rlr2jbx.css" crossorigin>
@@ -159,10 +156,24 @@
         box-sizing: border-box;
       }
 
+      /* MODIFIED: Wider content area for main element */
+      main {
+        width: 100%;
+        /* Use available width */
+        max-width: 1200px;
+        /* Set a max-width for very large screens */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1em 2em;
+        /* Add some horizontal padding */
+      }
+
+      /* Original .main class - kept for reference if used elsewhere, but not primary for page width */
       .main {
         display: flex;
         flex-flow: row wrap;
         width: 80%;
+        /* This was likely intended for an inner container */
         margin: 0 auto
       }
 
@@ -257,6 +268,7 @@
 
       @media (max-width: 600px) {
 
+        /* Responsive adjustments for .dpXX classes if they are used */
         .dp10,
         .dp12,
         .dp17,
@@ -310,8 +322,269 @@
       .border {
         border: 1px solid #1577ca;
       }
+
+      /* ADDED: Styles for Wimbledon Art Fair section */
+      .wimbledon-section {
+        display: flex;
+        flex-wrap: wrap;
+        /* Allows items to wrap to the next line on smaller screens */
+        align-items: center;
+        /* Vertically aligns the logo and text block */
+        gap: 1.5em;
+        /* Space between logo and text */
+        margin: 1.5em 0;
+        /* Adds some vertical margin to the section */
+      }
+
+      .wimbledon-logo {
+        flex: 0 0 150px;
+        /* Logo container will be 150px wide, won't grow or shrink */
+      }
+
+      .wimbledon-logo img {
+        width: 100%;
+        /* Image takes full width of its container */
+        height: auto;
+        /* Maintain aspect ratio */
+        display: block;
+        /* Removes any bottom space under the image */
+      }
+
+      .wimbledon-text {
+        flex: 1;
+        /* Text container takes up the remaining space */
+        min-width: 250px;
+        /* Minimum width before wrapping, helps maintain layout */
+      }
+
+      .wimbledon-text p {
+        margin: 0;
+        /* Remove default paragraph margin if needed for alignment */
+      }
+
+
+      /* Responsive adjustments for Wimbledon section */
+      @media (max-width: 680px) {
+
+        /* Adjust this breakpoint as needed */
+        .wimbledon-section {
+          flex-direction: column;
+          /* Stack image and text vertically */
+          align-items: flex-start;
+          /* Align items to the start (left) */
+        }
+
+        .wimbledon-logo {
+          flex-basis: auto;
+          /* Allow the logo's width to be controlled by width/max-width */
+          width: 40%;
+          /* Make the logo a bit wider when stacked */
+          max-width: 180px;
+          /* But not too large */
+          margin-bottom: 1em;
+          /* Add space below the logo when stacked */
+        }
+
+        .wimbledon-text {
+          min-width: 100%;
+          /* Text takes full width when stacked */
+        }
+      }
+
+      .callout-text {
+        font-size: 1.1em;
+        /* Slightly larger text */
+        font-style: italic;
+        /* Emphasized italic style */
+        text-align: center;
+        /* Centered text */
+        padding: 1em 1.5em;
+        /* Padding around the text */
+        margin: 2em auto;
+        /* Vertical margin and auto horizontal for centering block */
+        border: 1px solid #da894a;
+        /* Border using an existing accent color */
+        border-radius: 5px;
+        /* Slightly rounded corners */
+        background-color: rgba(218, 137, 74, 0.05);
+        /* Very subtle background tint */
+        max-width: 70ch;
+        /* Optimal width for readability */
+        line-height: 1.6;
+        /* Improved line spacing */
+      }
+
+      /* Styles for the widgets layout */
+      .social-widgets-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        margin: 2em 0;
+      }
+
+      .widget-container {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Responsive adjustment for widgets */
+      @media (max-width: 768px) {
+        .social-widgets-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .widget-container {
+          width: 100%;
+        }
+      }
+
+      /* New styles for the team bios layout */
+      .team-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 1em 0;
+      }
+
+      .team-member {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      /* Responsive adjustment for team bios */
+      @media (max-width: 768px) {
+        .team-container {
+          flex-direction: column;
+        }
+
+        .team-member {
+          width: 100%;
+        }
+      }
+
+      /* Blog posts section styles */
+      .blog-posts-section {
+        margin: 2em 0;
+        padding: 0 1em;
+      }
+
+      .blog-posts-section h2 {
+        text-align: center;
+        margin-bottom: 1.5em;
+        font-family: "sanvito-pro", sans-serif;
+        font-size: 1.8em;
+        color: #da894a;
+      }
+
+      .featured-posts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+        margin-bottom: 2em;
+      }
+
+      .featured-post {
+        flex: 1;
+        min-width: 260px;
+        padding: 1.5em;
+        border: 1px solid #da894a;
+        border-radius: 8px;
+        background-color: rgba(218, 137, 74, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .featured-post:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(218, 137, 74, 0.2);
+      }
+
+      .featured-post a {
+        text-decoration: none;
+        display: block;
+      }
+
+      .featured-post h3 {
+        color: #da894a;
+        margin-top: 0;
+        margin-bottom: 0.8em;
+        font-weight: bold;
+      }
+
+      .post-excerpt {
+        color: #666;
+        margin: 0;
+        font-size: 0.9em;
+        line-height: 1.5;
+      }
+
+      .regular-posts ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1em;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      .regular-posts li {
+        padding: 0.8em;
+        background-color: rgba(97, 160, 213, 0.1);
+        border-radius: 5px;
+        transition: background-color 0.2s ease;
+      }
+
+      .regular-posts li:hover {
+        background-color: rgba(97, 160, 213, 0.2);
+      }
+
+      .regular-posts a {
+        display: block;
+        padding: 0.3em;
+        text-decoration: none;
+      }
+
+      /* Responsive adjustments for blog posts */
+      @media (max-width: 768px) {
+        .featured-posts {
+          flex-direction: column;
+        }
+
+        .regular-posts ul {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2.5em auto;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .responsive-video {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+      }
+
+      .responsive-video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
     </style>
-    <link rel="me" href="https://macaw.social/@andypiper">
+
     <script async src="https://metapixl.com/embed.js" crossorigin></script>
   </head>
 
@@ -338,242 +611,326 @@
         <a class="button btcolor round" href="https://shop.forgeandcraft.co.uk" target="_blank"
           style="text-decoration: none; color: #EEE;">🎨 Check out our products</a>
       </div>
-      <div>
-        <blockquote class="instagram-media" data-instgrm-captioned
-          data-instgrm-permalink="https://www.instagram.com/p/DCVHW73tqEz/?utm_source=ig_embed&amp;utm_campaign=loading"
-          data-instgrm-version="14"
-          style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-          <div style="padding:16px;"> <a
-              href="https://www.instagram.com/p/DCVHW73tqEz/?utm_source=ig_embed&amp;utm_campaign=loading"
-              style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
-              target="_blank">
-              <div style=" display: flex; flex-direction: row; align-items: center;">
-                <div
-                  style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
-                </div>
-                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                  <div
-                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
-                  </div>
-                  <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
-                  </div>
-                </div>
-              </div>
-              <div style="padding: 19% 0;"></div>
-              <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px"
-                  viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg"
-                  xmlns:xlink="https://www.w3.org/1999/xlink">
-                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g transform="translate(-511.000000, -20.000000)" fill="#000000">
-                      <g>
-                        <path
-                          d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
-                        </path>
-                      </g>
-                    </g>
-                  </g>
-                </svg></div>
-              <div style="padding-top: 8px;">
-                <div
-                  style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
-                  View this post on Instagram</div>
-              </div>
-              <div style="padding: 12.5% 0;"></div>
-              <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
-                <div>
-                  <div
-                    style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
-                  </div>
-                  <div
-                    style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
-                  </div>
-                  <div
-                    style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
-                  </div>
-                </div>
-                <div style="margin-left: 8px;">
-                  <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
-                  </div>
-                  <div
-                    style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
-                  </div>
-                </div>
-                <div style="margin-left: auto;">
-                  <div
-                    style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
-                  </div>
-                  <div
-                    style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
-                  </div>
-                  <div
-                    style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
-                  </div>
-                </div>
-              </div>
-              <div
-                style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
-                <div
-                  style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
-                </div>
-                <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
-                </div>
-              </div>
-            </a>
-            <p
-              style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
-              <a href="https://www.instagram.com/p/DCVHW73tqEz/?utm_source=ig_embed&amp;utm_campaign=loading"
-                style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
-                target="_blank">A post shared by Forge &amp; Craft (@forgeandcraftstudio)</a>
-            </p>
-          </div>
-        </blockquote>
-        <script async src="//www.instagram.com/embed.js"></script>
-      </div>
-      <p>A Forge & Craft Original is created by <em>humans</em> collaborating with <em>algorithms</em> and
-        <em>robots</em>; each physical pen plot is unique through the stroke of the pen, the layering of the ink, and
-        the texture of the paper or materials chosen.
+
+      <p class="callout-text">A Forge & Craft Original is created by <strong>humans</strong> collaborating with
+        <strong>algorithms</strong> and <strong>robots</strong>; each physical pen plot is unique through the
+        stroke of the pen, the layering of the ink, and the texture of the paper or materials chosen.
         <br><br>
         A tangible, unique piece of art, made by us, using software and technology as part of our craft.
       </p>
 
+      <!-- YouTube Video Container -->
+      <div class="video-container">
+        <div class="responsive-video">
+          <iframe src="https://www.youtube.com/embed/8jyZkEsr1vs?si=0QY9o9HCM8nBQ-fK" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Blog posts section -->
+      <div class="blog-posts-section">
+        <h2>Blog posts</h2>
+
+        <!-- Featured/spotlight posts -->
+        <div class="featured-posts">
+          <div class="featured-post">
+            <a href="https://andypiper.co.uk/2024/07/30/art-and-algorithms-vs-ai/" target="_blank">
+              <h3>Art and Algorithms vs AI</h3>
+              <p class="post-excerpt">Exploring the intersection of algorithmic art and artificial intelligence in
+                modern creative practices.</p>
+            </a>
+          </div>
+
+          <div class="featured-post">
+            <a href="https://andypiper.co.uk/2025/04/17/pen-plotters-and-the-history-of-computer-art/" target="_blank">
+              <h3>Pen Plotters and the History of Computer Art</h3>
+              <p class="post-excerpt">A deep dive into the fascinating history of computer-generated art and the role of
+                pen plotters.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Regular blog links -->
+        <div class="regular-posts">
+          <ul>
+            <li><a href="https://andypiper.co.uk/2024/12/15/where-is-the-art/" target="_blank">Where is the Art?</a>
+            </li>
+            <li><a href="https://andypiper.co.uk/2025/04/28/heliocode/" target="_blank">HelioCode: Solar-Inspired
+                Algorithms</a></li>
+            <li><a href="https://andypiper.co.uk/2024/07/20/hacking-with-plotters/" target="_blank">Hacking with
+                Plotters</a></li>
+            <li><a href="https://andypiper.co.uk/2024/08/18/the-birth-life-death-of-stars/" target="_blank">The Birth,
+                Life & Death of Stars</a></li>
+            <li><a href="https://andypiper.co.uk/2023/10/26/a-peek-into-the-studio/" target="_blank">A Peek into the
+                Studio</a></li>
+            <li><a href="https://andypiper.co.uk/2024/07/19/activities-with-forge-craft/" target="_blank">Activities
+                with Forge & Craft</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Social widgets -->
+      <div class="social-widgets-container">
+        <!-- Instagram widget -->
+        <div class="widget-container">
+          <blockquote class="instagram-media" data-instgrm-captioned
+            data-instgrm-permalink="https://www.instagram.com/p/DCVHW73tqEz/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-version="14"
+            style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            <div style="padding:16px;"> <a
+                href="https://www.instagram.com/p/DCVHW73tqEz/?utm_source=ig_embed&amp;utm_campaign=loading"
+                style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                target="_blank">
+                <div style=" display: flex; flex-direction: row; align-items: center;">
+                  <div
+                    style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                  </div>
+                  <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                    <div
+                      style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                    </div>
+                    <div
+                      style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                    </div>
+                  </div>
+                </div>
+                <div style="padding: 19% 0;"></div>
+                <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px"
+                    viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg"
+                    xmlns:xlink="https://www.w3.org/1999/xlink">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                        <g>
+                          <path
+                            d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                          </path>
+                        </g>
+                      </g>
+                    </g>
+                  </svg></div>
+                <div style="padding-top: 8px;">
+                  <div
+                    style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+                    View this post on Instagram</div>
+                </div>
+                <div style="padding: 12.5% 0;"></div>
+                <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+                  <div>
+                    <div
+                      style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+                    </div>
+                    <div
+                      style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+                    </div>
+                    <div
+                      style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+                    </div>
+                  </div>
+                  <div style="margin-left: 8px;">
+                    <div
+                      style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+                    </div>
+                    <div
+                      style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+                    </div>
+                  </div>
+                  <div style="margin-left: auto;">
+                    <div
+                      style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+                    </div>
+                    <div
+                      style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+                    </div>
+                    <div
+                      style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+                  <div
+                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+                  </div>
+                  <div
+                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+                  </div>
+                </div>
+              </a>
+              <p
+                style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+                <a href="https://www.instagram.com/p/DCVHW73tqEz/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
+                  target="_blank">A post shared by Forge &amp; Craft (@forgeandcraftstudio)</a>
+              </p>
+            </div>
+          </blockquote>
+          <script async src="//www.instagram.com/embed.js"></script>
+        </div>
+
+        <!-- Pixelfed widget -->
+        <div class="widget-container">
+          <iframe title="Forge and Craft on Metapixl" src="https://metapixl.com/forgeandcraft/embed"
+            class="pixelfed__embed" style="max-width: 100%; border: 0" width="400" height="400"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
       <div>
-
         <hr>
-        <p>
-          <a href="https://wimbledonartfair.com/"><img src="https://cdn.some.pics/forgeandcraft/6516f81d8123b.png"
-              style="width: 100%; height: auto;" alt="The Wimbledon Art Fair logo in red"></a>
-        </p>
-        <p>Come and see us (along with 150+ other talented artists and creators) during the FREE open studios event,
-          May 8-11
-          2025. Find us in Red Studios 273.</p>
-
-        <hr>
-        <iframe title="Forge and Craft on Metapixl" src="https://metapixl.com/forgeandcraft/embed"
-          class="pixelfed__embed" style="max-width: 100%; border: 0" width="400" height="400" allowfullscreen></iframe>
+        <div class="wimbledon-section">
+          <div class="wimbledon-text">
+            <p>Come and see us (along with 150+ other talented artists and creators) during the FREE open studios event,
+              May 8-11 2025. Find us in Red Studios 273.</p>
+          </div>
+          <div class="wimbledon-logo">
+            <a href="https://wimbledonartfair.com/">
+              <img src="https://cdn.some.pics/forgeandcraft/6516f81d8123b.png" alt="The Wimbledon Art Fair logo in red">
+            </a>
+          </div>
+        </div>
         <hr>
       </div>
 
 
       <div>
-        If you met us at Liverpool Makefest, Electromagnetic Field, or at Wimbledon Art Fair, Thank You for
-        visiting!<br>Here is a link to
+        If you met us at Liverpool Makefest, Electromagnetic Field, High Tide, or at Wimbledon Art Fair, Thank You for
+        visiting!<br><br>Here is a link to
         Andy's <a href="https://forgeandcraft.url.lol/brachio">BrachioGraph pen plotter</a>.
         <hr>
       </div>
+
+      <!-- Team member section -->
       <div id="profile-items">
-        <h1>
-          Heidi
-        </h1>
-        <details>
-          <summary>Bio<span class="icon">→</span></summary>
-          <div class="person">Heidi Blanton is a contract User Experience Designer and Researcher passionate about
-            research, genealogy, design, and crafting. Her academic background is in Music. She also has a Masters
-            degree in Library and Information
-            Science, which has led her to a career in UX design, where she applies her research skills to create better
-            websites for
-            her clients. Heidi's love of genealogy has also led her to recently begin her studies for a Masters in
-            Genealogy at the
-            University of Strathclyde. She sees all her degrees and careers as an intersection of each other and her
-            passions.
-            <br /><br />
-            Before she got into crafting, she enjoyed sewing her wardrobes at home. During the pandemic, with more time
-            to learn new things, she had some ideas for creating a few little gifts around genealogy, starting with
-            things like mugs.
-            At some point, she wanted to figure out how to do these things more in-house, so this is really where the
-            interest
-            in vinyl cutting, printing, and heat pressing began. What started with a small cutting machine large enough
-            to make a
-            card has grown to a large machine, a mug and shirt press, and a couple of printers.
-            <br /><br />
-            Heidi's experience working in libraries, living in a culturally-rich place like London, and working with
-            clients across various sectors, including food, medicine, and finance, has fed into her lifelong love for
-            learning. She
-            believes that the experience she has gained over time has helped her to become a better researcher and
-            designer and is
-            happy to share her enthusiasm on any of the areas that interest her.
-            <br /><br />
-            Forge & Craft is a joint project with her husband, and they are happy to be at Wimbledon Art Studios,
-            growing and learning new skills together. She also owns her own consultancy as a contract UX Designer as <a
-              href="https://sapphirestream.com/">Sapphire
-              Stream</a>, and is available for research in genealogy and family history as <a
-              href="https://heidigoseek.com">heidi go seek</a>.
+        <!-- Team container with side-by-side layout -->
+        <div class="team-container">
+          <!-- Heidi section -->
+          <div class="team-member">
+            <h1>Heidi</h1>
+            <details>
+              <summary>Bio<span class="icon">→</span></summary>
+              <div class="person">Heidi Blanton is a contract User Experience Designer and Researcher passionate about
+                research, genealogy, design, and crafting. Her academic background is in Music. She also has a Masters
+                degree in Library and Information
+                Science, which has led her to a career in UX design, where she applies her research skills to create
+                better
+                websites for
+                her clients. Heidi's love of genealogy has also led her to recently begin her studies for a Masters in
+                Genealogy at the
+                University of Strathclyde. She sees all her degrees and careers as an intersection of each other and her
+                passions.
+                <br /><br />
+                Before she got into crafting, she enjoyed sewing her wardrobes at home. During the pandemic, with more
+                time
+                to learn new things, she had some ideas for creating a few little gifts around genealogy, starting with
+                things like mugs.
+                At some point, she wanted to figure out how to do these things more in-house, so this is really where
+                the
+                interest
+                in vinyl cutting, printing, and heat pressing began. What started with a small cutting machine large
+                enough
+                to make a
+                card has grown to a large machine, a mug and shirt press, and a couple of printers.
+                <br /><br />
+                Heidi's experience working in libraries, living in a culturally-rich place like London, and working with
+                clients across various sectors, including food, medicine, and finance, has fed into her lifelong love
+                for
+                learning. She
+                believes that the experience she has gained over time has helped her to become a better researcher and
+                designer and is
+                happy to share her enthusiasm on any of the areas that interest her.
+                <br /><br />
+                Forge & Craft is a joint project with her husband, and they are happy to be at Wimbledon Art Studios,
+                growing and learning new skills together. She also owns her own consultancy as a contract UX Designer as
+                <a href="https://sapphirestream.com/">Sapphire
+                  Stream</a>, and is available for research in genealogy and family history as <a
+                  href="https://heidigoseek.com">heidi go seek</a>.
+              </div>
+            </details>
+            <ul class="fa-ul">
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-book-open-reader"></i></span><a
+                  href="https://heidigoseek.com">heidi go seek</a>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-glasses"></i></span><a
+                  href="https://sapphirestream.com/">Sapphire
+                  Stream</a>
+              </li>
+            </ul>
           </div>
-        </details>
-        <ul class="fa-ul">
-          <li>
-            <span class="fa-li"><i class="fa-solid fa-book-open-reader"></i></span><a
-              href="https://heidigoseek.com">heidi go seek</a>
-          </li>
-          <li>
-            <span class="fa-li"><i class="fa-solid fa-glasses"></i></span><a href="https://sapphirestream.com/">Sapphire
-              Stream</a>
-          </li>
-        </ul>
-        <h1>
-          Andy
-        </h1>
-        <details>
-          <summary>Bio<span class="icon">→</span></summary>
-          <div class="person">Andy Piper is a technologist, educator, writer, and public speaker. He holds a Master
-            of Arts in Modern History from Brasenose College, Oxford, and he is self-taught in coding and
-            technology.
-            <br /><br />
-            Andy's love of computers began in the 1980s. His first hardware project was hacking a pair of Walkman
-            headphones into an 8-bit Acorn Electron! The emergence of affordable hardware with an educational focus
-            (e.g. Arduino and Raspberry Pi) during the past 10-15 years has enabled Andy to continue to work at the
-            intersection of hardware and software: building fun projects, and showing and teaching them to others.
-            <br /><br />
-            Building his own systems and solving problems naturally led Andy to the Open Source Software movement,
-            which is an ongoing passion. The combination of this code with Open Source Hardware platforms, has
-            enabled opportunities such as consumer-level 3D printing. Andy is developing skills in this area as part
-            of the Forge & Craft collaboration.
-            <br /><br />
-            Professionally, Andy spent 10 years working as a technical consultant for IBM in the UK, and went on to
-            build a worldwide reputation as a public speaker and developer advocate over another decade at companies
-            including VMware and Twitter.
-            <br /><br />
-            He is ⅓ of a weekly podcast, <a href="https://gamesatwork.biz">"Games at Work dot Biz"</a> (available in all
-            good podcast apps); helps with
-            the <a href="https://makeroni.cc">"Makeroni" hackspace meetup</a> at Wimbletech in Wimbledon; and loves to
-            tinker with LEDs, and retro
-            technology.
-            <br /><br />
-            Andy was named in the <a href="https://openuk.uk/2023-honours-lists/">Open UK New Year's Honours 2023</a> as
-            amongst the top social influencers of open
-            technology in the UK. He continues to work in online communities, and provides guidance and mentoring to
-            help others to understand complex technical concepts.
+
+          <!-- Andy section -->
+          <div class="team-member">
+            <h1>Andy</h1>
+            <details>
+              <summary>Bio<span class="icon">→</span></summary>
+              <div class="person">Andy Piper is a technologist, educator, writer, and public speaker. He holds a Master
+                of Arts in Modern History from Brasenose College, Oxford, and he is self-taught in coding and
+                technology.
+                <br /><br />
+                Andy's love of computers began in the 1980s. His first hardware project was hacking a pair of Walkman
+                headphones into an 8-bit Acorn Electron! The emergence of affordable hardware with an educational focus
+                (e.g. Arduino and Raspberry Pi) during the past 10-15 years has enabled Andy to continue to work at the
+                intersection of hardware and software: building fun projects, and showing and teaching them to others.
+                <br /><br />
+                Building his own systems and solving problems naturally led Andy to the Open Source Software movement,
+                which is an ongoing passion. The combination of this code with Open Source Hardware platforms, has
+                enabled opportunities such as consumer-level 3D printing. Andy is developing skills in this area as part
+                of the Forge & Craft collaboration.
+                <br /><br />
+                Professionally, Andy spent 10 years working as a technical consultant for IBM in the UK, and went on to
+                build a worldwide reputation as a public speaker and developer advocate over another decade at companies
+                including VMware and Twitter.
+                <br /><br />
+                He is ⅓ of a weekly podcast, <a href="https://gamesatwork.biz">"Games at Work dot Biz"</a> (available in
+                all
+                good podcast apps); helps with
+                the <a href="https://hackwimbledon.org/">HackWimbledon hackspace meetup</a> at Wimbletech in Wimbledon; and loves
+                to
+                tinker with LEDs, and retro
+                technology.
+                <br /><br />
+                Andy was named in the <a href="https://openuk.uk/2023-honours-lists/">Open UK New Year's Honours
+                  2023</a> as
+                amongst the top social influencers of open
+                technology in the UK. He continues to work in online communities, and provides guidance and mentoring to
+                help others to understand complex technical concepts.
+              </div>
+            </details>
+            <ul class="fa-ul">
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-microchip"></i></span><a rel="me"
+                  href="https://andypiper.omg.lol">Info</a>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-headphones"></i></span><a rel="me"
+                  href="https://gamesatwork.biz">Podcast</a>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-brands fa-github"></i></span><a rel="me"
+                  href="https://andypiper.org">Code</a>
+              </li>
+              <li>
+                <span class="fa-li"><i class="omg-icon omg-peertube"></i></span><a rel="me"
+                  href="https://makertube.net/c/andypiper_tv/">Videos</a>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-brands fa-dev"></i></span><a rel="me"
+                  href="https://dev.to/andypiper">Coding
+                  blog</a>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-p"></i></span><a rel="me"
+                  href="https://www.printables.com/@AndyPiper">Printables</a>
+              </li>
+            </ul>
           </div>
-        </details>
-        <ul class="fa-ul">
-          <li>
-            <span class="fa-li"><i class="fa-solid fa-microchip"></i></span><a rel="me"
-              href="https://andypiper.omg.lol">Info</a>
-          </li>
-          <li>
-            <span class="fa-li"><i class="fa-solid fa-headphones"></i></span><a rel="me"
-              href="https://gamesatwork.biz">Podcast</a>
-          </li>
-          <li>
-            <span class="fa-li"><i class="fa-brands fa-github"></i></span><a rel="me"
-              href="https://andypiper.org">Code</a>
-          </li>
-          <li>
-            <span class="fa-li"><i class="omg-icon omg-peertube"></i></span><a rel="me"
-              href="https://makertube.net/c/andypiper_tv/">Videos</a>
-          </li>
-          <li>
-            <span class="fa-li"><i class="fa-brands fa-dev"></i></span><a rel="me"
-              href="https://dev.to/andypiper">Coding
-              blog</a>
-          </li>
-          <li>
-            <span class="fa-li"><i class="fa-solid fa-p"></i></span><a rel="me"
-              href="https://www.printables.com/@AndyPiper">Printables</a>
-          </li>
-        </ul>
-        <h1>
-          Contact
-        </h1>
+        </div>
+
+        <!-- Contact section - full width -->
+        <h1>Contact</h1>
         <ul class="fa-ul">
           <li>
             <span class="fa-li"><i class="fa-solid fa-shopping-bag"></i></span><a rel="me"
@@ -585,7 +942,7 @@
           </li>
           <li>
             <span class="fa-li"><i class="fa-solid fa-feather-pointed"></i></span>Studio 273,
-            <span>  </span><a href="https://www.wimbledonartstudios.co.uk/forge-and-craft">Wimbledon Art Studios</a>
+            <span> </span><a href="https://www.wimbledonartstudios.co.uk/forge-and-craft">Wimbledon Art Studios</a>
           </li>
           <li>
             <span class="fa-li"><i class="fa-brands fa-instagram"></i></span><a rel="me"
@@ -594,29 +951,13 @@
           <li>
             <span class="fa-li"><i class="omg-icon omg-fediverse"></i></span><a rel="me"
               href="https://metapixl.com/@forgeandcraft"> Pixelfed /
-              Mastodon</a><span>  </span>@forgeandcraft@metapixl.com
+              Mastodon</a> &nbsp; ➡ @forgeandcraft@metapixl.com
           </li>
         </ul>
 
         <hr>
-        <!-- Wimbledon Art Fair block --
-        <p>
-          <a href="https://wimbledonartfair.com/"><img src="https://cdn.some.pics/forgeandcraft/6516f81d8123b.png"
-              style="width: 100%; height: auto;"
-              alt="The Wimbledon Art Fair logo in red"></a>
-        </p>
-<p>Come and see us (along with 150+ other talented artists and creators) during the FREE open studios event, May 9-12 2024. Find us in Red Studios 273.</p>
--->
-
-        <!--
-      <div style="position: relative; padding-top: 56.25%;"><iframe title="Forge & Craft Studio Tour May 2023"
-          width="100%" height="100%"
-          src="https://makertube.net/videos/embed/867d5c09-100e-495b-94e7-d41c40ca99e3?warningTitle=0&peertubeLink=0"
-          frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-          style="position: absolute; inset: 0px;"></iframe></div>
+        <div id="footer">&nbsp;</div>
       </div>
-    -->
-        <div id="footer"></div>
     </main>
   </body>
 
