@@ -569,7 +569,8 @@
       .responsive-video {
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        padding-bottom: 56.25%;
+        /* 16:9 aspect ratio */
         height: 0;
         overflow: hidden;
       }
@@ -583,6 +584,79 @@
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
+
+      .link-card {
+        display: block;
+        max-width: 400px;
+        border: 1px solid #e1e4e8;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(27, 31, 35, .12);
+        text-decoration: none;
+        color: inherit;
+        transition: box-shadow .2s ease;
+        font-family: Arial, sans-serif;
+      }
+
+      .link-card:hover {
+        box-shadow: 0 4px 12px rgba(27, 31, 35, .15);
+      }
+
+      .link-card__inner {
+        display: flex;
+        align-items: stretch;
+      }
+
+      .link-card__img {
+        flex: 0 0 120px;
+        background: #f6f8fa url('https://via.placeholder.com/120x120.png?text=InfoQ') center/cover no-repeat;
+      }
+
+      .link-card__body {
+        padding: 12px 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .link-card__title {
+        font-size: 1rem;
+        margin: 0 0 6px;
+        line-height: 1.2;
+        color: #0366d6;
+      }
+
+      .link-card__desc {
+        font-size: .875rem;
+        margin: 0 0 8px;
+        color: #586069;
+        line-height: 1.4;
+      }
+
+      .link-card__url {
+        font-size: .75rem;
+        color: #999;
+        word-break: break-all;
+      }
+
+
+      .embed-infoq {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      .embed-infoq img+h3 {
+        border-top: 1px solid #da894a;
+        padding-top: 1em;
+        margin-top: 0;
+      }
+      @media (min-width: 1024px) {
+        .embed-infoq {
+          width: 70%;
+          max-width: 70%;
+        }
+      }
+
     </style>
 
     <script async src="https://metapixl.com/embed.js" crossorigin></script>
@@ -619,15 +693,44 @@
         A tangible, unique piece of art, made by us, using software and technology as part of our craft.
       </p>
 
-      <!-- YouTube Video Container -->
-      <div class="video-container">
-        <div class="responsive-video">
-          <iframe src="https://www.youtube.com/embed/8jyZkEsr1vs?si=0QY9o9HCM8nBQ-fK" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="blog-posts-section">
+        <h2>Talks</h2>
+
+        <!-- InfoQ Presentation Embed -->
+        <div class="featured-post embed-infoq">
+          <a href="https://www.infoq.com/presentations/creative-technology/" target="_blank" rel="noopener">
+            <img src="https://cdn.some.pics/forgeandcraft/6821d85846ecf.jpg"
+              alt="Where is the Art? a History in Technology thumbnail" style="
+                       width:100%;
+                       display:block;
+                       border-top-left-radius:8px;
+                       border-top-right-radius:8px;
+                       margin-bottom:1em;
+                     ">
+            <h3>Where is the Art? a History in Technology</h3>
+            <p class="post-excerpt">
+              Andy Piper discusses creative technology and art and the ways in which it has been misunderstood and
+              feared at
+              different points in our shared history and culture.
+            </p>
+            <p class="post-excerpt">
+              <small>infoq.com/presentations/creative-technology</small>
+            </p>
+          </a>
         </div>
+
+        <!-- YouTube Video Container -->
+        <div class="video-container regular-posts">
+          <div class="responsive-video">
+            <iframe src="https://www.youtube.com/embed/8jyZkEsr1vs?si=0QY9o9HCM8nBQ-fK" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+
       </div>
+
 
       <!-- Blog posts section -->
       <div class="blog-posts-section">
@@ -676,11 +779,11 @@
         <!-- Instagram widget -->
         <div class="widget-container">
           <blockquote class="instagram-media" data-instgrm-captioned
-            data-instgrm-permalink="https://www.instagram.com/p/DCVHW73tqEz/?utm_source=ig_embed&amp;utm_campaign=loading"
+            data-instgrm-permalink="https://www.instagram.com/p/DJZlUTBNuLU/?utm_source=ig_embed&amp;utm_campaign=loading"
             data-instgrm-version="14"
             style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
             <div style="padding:16px;"> <a
-                href="https://www.instagram.com/p/DCVHW73tqEz/?utm_source=ig_embed&amp;utm_campaign=loading"
+                href="https://www.instagram.com/p/DJZlUTBNuLU/?utm_source=ig_embed&amp;utm_campaign=loading"
                 style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
                 target="_blank">
                 <div style=" display: flex; flex-direction: row; align-items: center;">
@@ -760,12 +863,13 @@
               </a>
               <p
                 style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
-                <a href="https://www.instagram.com/p/DCVHW73tqEz/?utm_source=ig_embed&amp;utm_campaign=loading"
+                <a href="https://www.instagram.com/p/DJZlUTBNuLU/?utm_source=ig_embed&amp;utm_campaign=loading"
                   style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
                   target="_blank">A post shared by Forge &amp; Craft (@forgeandcraftstudio)</a>
               </p>
             </div>
           </blockquote>
+          <script async src="//www.instagram.com/embed.js"></script>
           <script async src="//www.instagram.com/embed.js"></script>
         </div>
 
@@ -777,6 +881,7 @@
         </div>
       </div>
 
+      <!--
       <div>
         <hr>
         <div class="wimbledon-section">
@@ -792,9 +897,11 @@
         </div>
         <hr>
       </div>
+    -->
 
 
       <div>
+        <hr>
         If you met us at Liverpool Makefest, Electromagnetic Field, High Tide, or at Wimbledon Art Fair, Thank You for
         visiting!<br><br>Here is a link to
         Andy's <a href="https://forgeandcraft.url.lol/brachio">BrachioGraph pen plotter</a>.
@@ -887,7 +994,8 @@
                 He is ⅓ of a weekly podcast, <a href="https://gamesatwork.biz">"Games at Work dot Biz"</a> (available in
                 all
                 good podcast apps); helps with
-                the <a href="https://hackwimbledon.org/">HackWimbledon hackspace meetup</a> at Wimbletech in Wimbledon; and loves
+                the <a href="https://hackwimbledon.org/">HackWimbledon hackspace meetup</a> at Wimbletech in Wimbledon;
+                and loves
                 to
                 tinker with LEDs, and retro
                 technology.
@@ -941,15 +1049,15 @@
               href="https://www.linkedin.com/company/forge-craft"> LinkedIn</a>
           </li>
           <li>
-            <span class="fa-li"><i class="fa-solid fa-feather-pointed"></i></span>Studio 273,
-            <span> </span><a href="https://www.wimbledonartstudios.co.uk/forge-and-craft">Wimbledon Art Studios</a>
+            <span class="fa-li"><i class="fa-solid fa-feather-pointed"></i></span>Studio 273,&nbsp;
+            <a href="https://www.wimbledonartstudios.co.uk/forge-and-craft">Wimbledon Art Studios</a>
           </li>
           <li>
             <span class="fa-li"><i class="fa-brands fa-instagram"></i></span><a rel="me"
               href="https://instagram.com/forgeandcraftstudio"> Instagram</a>
           </li>
           <li>
-            <span class="fa-li"><i class="omg-icon omg-fediverse"></i></span><a rel="me"
+            <span class="fa-li"><i class="omg-icon omg-fediverse-alt"></i></span><a rel="me"
               href="https://metapixl.com/@forgeandcraft"> Pixelfed /
               Mastodon</a> &nbsp; ➡ @forgeandcraft@metapixl.com
           </li>
