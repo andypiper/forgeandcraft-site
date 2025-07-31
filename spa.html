@@ -2,6 +2,11 @@
 <html lang="en">
 
   <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Pen plotter art, 3D printing, vinyl cutting, electronics, craft. Wimbledon, UK. A Forge & Craft Original is created by humans collaborating with algorithms and robots.">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://use.typekit.net">
+    <link rel="preconnect" href="https://cdn.cache.lol">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-30TX449EJE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -63,14 +68,30 @@
     <link rel="stylesheet" href="https://use.typekit.net/rlr2jbx.css" crossorigin>
 
     <style>
+      :root {
+        --primary-color: #da894a;
+        --secondary-color: #61a0d5;
+        --accent-color: #4aa2da;
+        --text-color: #da894a;
+        --bg-tint: rgba(218, 137, 74, 0.05);
+        --border-color: #da894a;
+      }
+
       body {
         font-family: "karmina-sans", sans-serif;
-        color: #da894a;
+        color: var(--text-color);
+      }
+
+      h1, h2 {
+        font-family: "sanvito-pro", sans-serif;
       }
 
       h1 {
-        font-family: "sanvito-pro", sans-serif;
         font-size: 1.8em;
+      }
+
+      h2 {
+        font-size: 1.5em;
       }
 
       #name {
@@ -97,24 +118,24 @@
       .fa-li,
       .fas,
       .omg-icon {
-        color: #da894a;
-        fill: #da894a;
-        stroke: #da894a;
+        color: var(--primary-color);
+        fill: var(--primary-color);
+        stroke: var(--primary-color);
       }
 
       a:link,
       a:visited {
-        color: #da894a;
+        color: var(--primary-color);
         text-decoration: underline;
-        text-decoration-color: #da894a;
+        text-decoration-color: var(--primary-color);
         border-bottom: none;
       }
 
       a:hover,
       a:active {
-        color: #61a0d5;
+        color: var(--secondary-color);
         text-decoration: underline;
-        text-decoration-color: #4aa2da;
+        text-decoration-color: var(--accent-color);
         border-bottom: none;
       }
 
@@ -156,138 +177,13 @@
         box-sizing: border-box;
       }
 
-      /* MODIFIED: Wider content area for main element */
       main {
         width: 100%;
-        /* Use available width */
         max-width: 1200px;
-        /* Set a max-width for very large screens */
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
         padding: 1em 2em;
-        /* Add some horizontal padding */
       }
 
-      /* Original .main class - kept for reference if used elsewhere, but not primary for page width */
-      .main {
-        display: flex;
-        flex-flow: row wrap;
-        width: 80%;
-        /* This was likely intended for an inner container */
-        margin: 0 auto
-      }
-
-      .dp10,
-      .dp12,
-      .dp17,
-      .dp20,
-      .dp25,
-      .dp33,
-      .dp40,
-      .dp50,
-      .dp60,
-      .dp67,
-      .dp75,
-      .dp80,
-      .dp83,
-      .dp100,
-      .fluid {
-        margin: 0 0 0 var(--m)
-      }
-
-      .dp10 {
-        width: calc(10% - var(--m))
-      }
-
-      .dp12 {
-        width: calc(12.5% - var(--m))
-      }
-
-      .dp17 {
-        width: calc(16.6667% - var(--m))
-      }
-
-      .dp20 {
-        width: calc(20% - var(--m))
-      }
-
-      .dp25 {
-        width: calc(25% - var(--m))
-      }
-
-      .dp33 {
-        width: calc(33.3334% - var(--m))
-      }
-
-      .dp40 {
-        width: calc(40% - var(--m))
-      }
-
-      .dp50 {
-        width: calc(50% - var(--m))
-      }
-
-      .dp60 {
-        width: calc(60% - var(--m))
-      }
-
-      .dp67 {
-        width: calc(66.6667% - var(--m))
-      }
-
-      .dp75 {
-        width: calc(75% - var(--m))
-      }
-
-      .dp80 {
-        width: calc(80% - var(--m))
-      }
-
-      .dp83 {
-        width: calc(83.3334% - var(--m))
-      }
-
-      .dp100 {
-        width: calc(100% - var(--m))
-      }
-
-      .fluid {
-        flex: 2
-      }
-
-      .clear {
-        width: 100%
-      }
-
-      .nomargin {
-        display: flex;
-        flex-flow: row wrap;
-        padding: 0 !important;
-        margin: 0 !important
-      }
-
-      @media (max-width: 600px) {
-
-        /* Responsive adjustments for .dpXX classes if they are used */
-        .dp10,
-        .dp12,
-        .dp17,
-        .dp20,
-        .dp25,
-        .dp33,
-        .dp40,
-        .dp50,
-        .dp60,
-        .dp67,
-        .dp75,
-        .dp80,
-        .dp83,
-        .dp100,
-        .fluid {
-          width: 100%;
-          margin: 0
-        }
-      }
 
       .button {
         font-size: 1em;
@@ -323,7 +219,7 @@
         border: 1px solid #1577ca;
       }
 
-      /* ADDED: Styles for Wimbledon Art Fair section */
+      /* Wimbledon Art Fair section styles */
       .wimbledon-section {
         display: flex;
         flex-wrap: wrap;
@@ -338,80 +234,55 @@
 
       .wimbledon-logo {
         flex: 0 0 150px;
-        /* Logo container will be 150px wide, won't grow or shrink */
       }
 
       .wimbledon-logo img {
         width: 100%;
-        /* Image takes full width of its container */
         height: auto;
-        /* Maintain aspect ratio */
         display: block;
-        /* Removes any bottom space under the image */
       }
 
       .wimbledon-text {
         flex: 1;
-        /* Text container takes up the remaining space */
         min-width: 250px;
-        /* Minimum width before wrapping, helps maintain layout */
       }
 
       .wimbledon-text p {
         margin: 0;
-        /* Remove default paragraph margin if needed for alignment */
       }
 
 
       /* Responsive adjustments for Wimbledon section */
       @media (max-width: 680px) {
 
-        /* Adjust this breakpoint as needed */
         .wimbledon-section {
           flex-direction: column;
-          /* Stack image and text vertically */
           align-items: flex-start;
-          /* Align items to the start (left) */
         }
 
         .wimbledon-logo {
           flex-basis: auto;
-          /* Allow the logo's width to be controlled by width/max-width */
           width: 40%;
-          /* Make the logo a bit wider when stacked */
           max-width: 180px;
-          /* But not too large */
           margin-bottom: 1em;
-          /* Add space below the logo when stacked */
         }
 
         .wimbledon-text {
           min-width: 100%;
-          /* Text takes full width when stacked */
         }
       }
 
       .callout-text {
         font-size: 1.1em;
-        /* Slightly larger text */
         font-style: italic;
-        /* Emphasized italic style */
         text-align: center;
-        /* Centered text */
         padding: 1em 1.5em;
-        /* Padding around the text */
         margin: 2em auto;
-        /* Vertical margin and auto horizontal for centering block */
         border: 1px solid #da894a;
-        /* Border using an existing accent color */
         border-radius: 5px;
-        /* Slightly rounded corners */
         background-color: rgba(218, 137, 74, 0.05);
-        /* Very subtle background tint */
         max-width: 70ch;
-        /* Optimal width for readability */
         line-height: 1.6;
-        /* Improved line spacing */
       }
 
       /* Styles for the widgets layout */
@@ -646,7 +517,7 @@
         margin: 0 auto;
       }
       .embed-infoq img+h3 {
-        border-top: 1px solid #da894a;
+        border-top: 1px solid var(--border-color);
         padding-top: 1em;
         margin-top: 0;
       }
@@ -700,7 +571,7 @@
         <div class="featured-post embed-infoq">
           <a href="https://www.infoq.com/presentations/creative-technology/" target="_blank" rel="noopener">
             <img src="https://cdn.some.pics/forgeandcraft/6821d85846ecf.jpg"
-              alt="Where is the Art? a History in Technology thumbnail" style="
+              alt="Where is the Art? a History in Technology thumbnail" loading="lazy" style="
                        width:100%;
                        display:block;
                        border-top-left-radius:8px;
@@ -872,32 +743,8 @@
           <script async src="//www.instagram.com/embed.js"></script>
         </div>
 
-        <!-- Pixelfed widget -->
-        <!-- not working due to metapixl using Anubis -->
-        <!--  <div class="widget-container">
-          <iframe title="Forge and Craft on Metapixl" src="https://metapixl.com/forgeandcraft/embed"
-            class="pixelfed__embed" style="max-width: 100%; border: 0" width="400" height="400"
-            allowfullscreen></iframe>
-        </div>-->
       </div>
 
-      <!--
-      <div>
-        <hr>
-        <div class="wimbledon-section">
-          <div class="wimbledon-text">
-            <p>Come and see us (along with 150+ other talented artists and creators) during the FREE open studios event,
-              May 8-11 2025. Find us in Red Studios 273.</p>
-          </div>
-          <div class="wimbledon-logo">
-            <a href="https://wimbledonartfair.com/">
-              <img src="https://cdn.some.pics/forgeandcraft/6516f81d8123b.png" alt="The Wimbledon Art Fair logo in red">
-            </a>
-          </div>
-        </div>
-        <hr>
-      </div>
-    -->
 
 
       <div>
@@ -914,7 +761,7 @@
         <div class="team-container">
           <!-- Heidi section -->
           <div class="team-member">
-            <h1>Heidi</h1>
+            <h2>Heidi</h2>
             <details>
               <summary>Bio<span class="icon">→</span></summary>
               <div class="person">Heidi Blanton is a contract User Experience Designer and Researcher passionate about
@@ -970,7 +817,7 @@
 
           <!-- Andy section -->
           <div class="team-member">
-            <h1>Andy</h1>
+            <h2>Andy</h2>
             <details>
               <summary>Bio<span class="icon">→</span></summary>
               <div class="person">Andy Piper is a technologist, educator, writer, and public speaker. He holds a Master
@@ -1038,7 +885,7 @@
         </div>
 
         <!-- Contact section - full width -->
-        <h1>Contact</h1>
+        <h2>Contact</h2>
         <ul class="fa-ul">
           <li>
             <span class="fa-li"><i class="fa-solid fa-shopping-bag"></i></span><a rel="me"

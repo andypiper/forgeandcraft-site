@@ -1,10 +1,40 @@
-# forgeandcraft-site
-The [Forge &amp; Craft](https://forgeandcraft.co.uk) website.
+# Forge & Craft Website
 
-![FCLogo](https://metapixl.com/storage/avatars/054/671/252/002/144/040/8/tmt1cRqh02wITSu3RHGU_avatar.png?v=3)
+A clean, minimal website for [Forge & Craft](https://forgeandcraft.co.uk) - showcasing creative projects and events.
 
-Currently a single page on omg.lol, initially styled as a profile page, now static HTML. The image gallery is [via PixelFed running on MetaPixl](https://metapixl.com/@forgeandcraft).
+![Forge & Craft Logo](https://metapixl.com/storage/avatars/054/671/252/002/144/040/8/tmt1cRqh02wITSu3RHGU_avatar.png?v=3)
 
-Requires [clilol](https://mcornick.com/clilol/) for the deploy/update script.
+## About
 
-That is all. Move along.
+This is a single-page application hosted on [omg.lol](https://omg.lol), featuring:
+
+- Clean, responsive design
+- Event information and updates
+- Integration with social media and galleries
+- Photo gallery
+
+## Project Structure
+
+```
+├── spa.html    # Main website HTML file
+├── deploy.sh   # Deployment script
+└── README.md   # This file
+```
+
+## Development
+
+The site is built as a static HTML page with embedded styles and JavaScript as omg.lol does not support external CSS or JS files.
+
+## Deployment
+
+Deployment is handled via [clilol](https://clilol.readthedocs.io/latest/), which uploads the site to omg.lol:
+
+```bash
+./deploy.sh
+```
+
+**Prerequisites:** Install `clilol` and configure your omg.lol credentials.
+
+## License
+
+All content and code for the Forge & Craft website.
